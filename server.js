@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // middleware
-app.use(express.json());
+app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) => {
   res.send("API is running...");

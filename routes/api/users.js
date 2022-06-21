@@ -1,5 +1,5 @@
 const express = require("express");
-const { check, validationResult } = require("express-validator/check");
+const { check, validationResult } = require("express-validator");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 
@@ -7,7 +7,7 @@ const User = require("../../models/User");
 
 const router = express.Router();
 
-router.get(
+router.post(
   "/",
   [
     check("name", "Name is required").not().isEmpty(),
