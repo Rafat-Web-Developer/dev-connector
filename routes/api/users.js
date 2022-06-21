@@ -1,6 +1,8 @@
 const express = require("express");
 const { check, validationResult } = require("express-validator/check");
 
+const User = require("../../models/User");
+
 const router = express.Router();
 
 router.get(
@@ -13,12 +15,27 @@ router.get(
       "Please enter a password with 6 or more character"
     ).isLength({ min: 6 }),
   ],
-  (req, res) => {
+  async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).send({ errors: errors.array() });
+      return res.status(400).json({ errors: errors.array() });
     }
-    res.send("User Router");
+
+    const { name, email, password } = req.body;
+
+    try {
+      let user = User.findOne({ email });
+      if (user) {
+        return res
+          .status(400)
+          .json({ errors: [{ msg: "User already exist" }] });
+      }
+
+      res.send("User Router");
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).send("Server Error");
+    }
   }
 );
 
