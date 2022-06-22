@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://devConnectorMainUser:aAlcmsXzt4fRLS9l@devconnectorcluster01.akdvl.mongodb.net/?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://devConnectorMainUser:aAlcmsXzt4fRLS9l@devconnectorcluster01.akdvl.mongodb.net/?retryWrites=true&w=majority",
+    "jwtSecrete": "Rafat@01876"
 }
