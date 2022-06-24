@@ -1,4 +1,6 @@
 {
     "mongoURI": "mongodb+srv://devConnectorMainUser:aAlcmsXzt4fRLS9l@devconnectorcluster01.akdvl.mongodb.net/?retryWrites=true&w=majority",
-    "jwtSecrete": "Rafat@01876"
+    "jwtSecrete": "Rafat@01876",
+    "githubClientID": "e9416488153681550d3b",
+    "githubSecret": "a8166a68970229e5a7005d07ff0751b16aec70d0"
 }
