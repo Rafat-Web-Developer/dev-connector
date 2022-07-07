@@ -5,9 +5,12 @@ import Register from "./components/auth/Register";
 import Landing from "./components/layout/Landing";
 import Navbar from "./components/layout/Navbar";
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Navbar></Navbar>
 
       <Routes>
@@ -19,7 +22,7 @@ function App() {
           <Route path="/register" element={<Register></Register>}></Route>
         </Routes>
       </section>
-    </>
+    </Provider>
   );
 }
 
